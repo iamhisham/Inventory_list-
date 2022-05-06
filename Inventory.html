@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <ul id="list"></ul>
+
+      <input type="text" id="candidate" />
+      <br />
+      <button onclick="add()">add item</button>
+
+      <button onclick="remove()">remove item</button>
+    </div>
+  </body>
+  <script>
+    function add() {
+      var ul = document.getElementById("list");
+      var candidate = document.getElementById("candidate");
+      var li = document.createElement("li");
+      li.setAttribute("id", candidate.value);
+
+      //
+      li.appendChild(document.createTextNode(candidate.value));
+      ul.appendChild(li);
+    }
+
+    function remove() {
+      var ul = document.getElementById("list");
+      var candidate = document.getElementById("candidate");
+      var item = document.getElementById(candidate.value);
+      ul.removeChild(item);
+    }
+  </script>
+</html>
